@@ -68,6 +68,8 @@ do
       --env "xpack.security.enabled=false" \
       --env "xpack.license.self_generated.type=basic" \
       --env "http.port=${port}" \
+      --env "script.painless.regex.enabled=true" \
+      --env "script.painless.regex.limit-factor=10000" \
       --env "action.destructive_requires_name=false" \
       --ulimit nofile=65536:65536 \
       --ulimit memlock=-1:-1 \
@@ -93,6 +95,8 @@ do
         --env "ES_JAVA_OPTS=-Xms1g -Xmx1g" \
         --env "http.port=${port}" \
         --env "action.destructive_requires_name=false" \
+        --env "script.painless.regex.enabled=true" \
+        --env "script.painless.regex.limit-factor=10000" \
         --ulimit nofile=65536:65536 \
         --ulimit memlock=-1:-1 \
         --publish "${port}:${port}" \
